@@ -11,10 +11,11 @@ Different artifacts compose MOWL as follows:
 * mowl.mtc.design contains the transformation chain that translates a model conform to the MOWL language to a knowledge base written in JESS.
 * mowl.tool.design contains the implementation of the graphic editor using [SIRIUS](https://www.eclipse.org/sirius/).
 
-## Users Mode
+Users can explore these artifacts according to their interests as follows:
 
-
-
+* Have a look to the mowl.installer instructions, if you want to use the graphic editor to create Multiontologies.
+* Have a look to the mowl.installer and mowl.mtc.design instructions, if you want to use the graphic editor to create Multiontologies and generate their knowledge bases.
+* Have a look to the mowl.metamodel and mowl.tool.design instructions, if you want to extend MOWL. This might also need to modify the transformations in mowl.mtc.design.
 
 ## Sources
 1. [Cuenca, B., Parsia, B. and Sirin, E. "Ontology Integration Using ε-Connections", In Modular Ontologies: Concepts, Theories and Techniques for Knowledge Modularization, Springer Berlin Heidelberg (2009).](https://link.springer.com/chapter/10.1007/978-3-642-01907-4_14)
