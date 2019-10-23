@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module jess2file('http:///jess.ecore')]
+
+
+[template public generateElement(aRoot : JessFile)]
+[comment @main/]
+[file (aRoot.name.toString() + '.clp', false, 'UTF-8')]
+;;; Declaring the triple template ---------------------------------
+(deftemplate triple "Template representing a triple" 
+ (slot predicate (default "")) 
+ (slot subject   (default "")) 
+ (slot object    (default ""))
+)
+
+[for(r:Root|aRoot.expressions)]
+
+;;;[r.commentsBefore/] Facts
+;;;[r.commentsAfter/]
+[for(fd:FactDefinition|r.expressions)]
+[printFactDefinition(fd)/]
+[/for]
+[/for]
+
+(run)
+(save-facts "owlfacts.txt")
+[/file]
+[/template]
+
+[template public printFactDefinition(fd : FactDefinition)]
+([fd.factName.val/]	[for(e:Expression|fd.fact)][if(e.oclIsKindOf(FactDefinition))][printFactDefinition(e.oclAsType(FactDefinition))/][/if][if(e.oclIsKindOf(Str))] "[e.oclAsType(Str).val/]"[/if][/for])
+[/template]

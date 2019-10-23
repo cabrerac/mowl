@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Require-Bundle: com.mtcflow.model,com.mtcflow.engine,com.mtcflow.engin
+ e.core
+Bundle-Version: 1.0.0
+Bundle-Name: mowl.mtc.design
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: mowl.mtc.design
+Import-Package: org.eclipse.acceleo.engine.event,
+ org.eclipse.acceleo.engine.generation.strategy,
+ org.eclipse.acceleo.engine.service
+

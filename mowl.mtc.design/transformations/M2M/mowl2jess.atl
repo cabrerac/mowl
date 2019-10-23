@@ -1,0 +1,1971 @@
+-- @nsURI jess=http:///jess.ecore
+-- @nsURI mowl=http:///mowl.ecore
+
+module mowl2jess;
+create OUT : jess from IN : mowl;
+
+rule Multiontology2JessFile{
+	from
+		multiontology:mowl!Multiontology
+	to
+		root:jess!JessFile(
+			name <- multiontology.id,
+			expressions <- multiontologyRoot,
+			expressions <- multiontology.ontologies 
+		),
+		multiontologyRoot:jess!Root(
+			commentsBefore <- multiontology.id,
+			commentsAfter <-  'IRI= ' + (multiontology.prefixIRI+'.mowl').regexReplaceAll(' ', '_'),
+			commentsAfter <-  ' Version= ' + multiontology.version,
+			expressions <- multiontologyFact,
+			expressions <- multiontology.multiontologyAxioms,
+			expressions <- multiontology.ontologyConnectors
+		),
+		multiontologyFact:jess!FactDefinition(
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- '#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (multiontology.prefixIRI + '.mowl#').regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- '#Multiontology'
+		)
+}
+
+rule EquivalentLinkProperty2Fact{
+	from 
+		axiom:mowl!EquivalentLinkProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#equivalentLinkProperty',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#equivalentLinkProperty'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)		
+}
+
+rule SubLinkPropertyOf2Fact{
+	from 
+		axiom:mowl!SubLinkPropertyOf
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#subLinkPropertyOf',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#subLinkPropertyOf'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DisjointLinkProperty2Fact{
+	from 
+		axiom:mowl!DisjointLinkProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#disjointLinkPropertyWith',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#disjointLinkPropertyWith'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DomainLinkProperty2Fact{
+	from 
+		axiom:mowl!DomainLinkProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#linkPropertyDomain',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#linkPropertyDomain'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule RangeLinkProperty2Fact{
+	from 
+		axiom:mowl!RangeLinkPropertyOf
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#linkPropertyRange',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#linkPropertyRange'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule OntologyConnector2Fact{
+	from
+		connector:mowl!LinkProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- connector.id, 
+			commentsAfter <-  'IRI= ' + (connector.sourceOntology.multiontology.prefixIRI + '.mowl/' + connector.id).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (connector.sourceOntology.multiontology.prefixIRI + '.mowl#' + connector.id ).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- '#LinkProperty'
+		)
+}
+
+rule Ontology2Root{
+	from
+		ontology:mowl!Ontology
+	to
+		fact:jess!Root(
+			 commentsBefore <- ontology.id,
+			 commentsAfter <- 'IRI= ' + (ontology.multiontology.prefixIRI + '.mowl/' + ontology.id+'.owl').regexReplaceAll(' ', '_'),
+			 commentsAfter <- ' Version= ' + ontology.version,
+			 expressions <- ontologyFact,
+			 expressions <- ontology.ontologyAxioms,
+			 expressions <- ontology.classes,
+			 expressions <- ontology.objectsProperty,
+			 expressions <- ontology.dataProperty,
+			 expressions <- ontology.individuals,
+			 expressions <- ontology.literals
+		),
+		ontologyFact:jess!FactDefinition(
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,   
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (ontology.multiontology.prefixIRI + '.mowl/' + ontology.id + '.owl#').regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#Ontology'
+		)
+}
+
+rule EquivalentClass2Fact{
+	from 
+		axiom:mowl!EquivalentClass
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#equivalentClass',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#equivalentClass'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule SubClassOf2Fact{
+	from 
+		axiom:mowl!SubClassOf
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#subClassOf',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#subClassOf'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DisjointClass2Fact{
+	from 
+		axiom:mowl!DisjointClass
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#disjointClassWith',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#disjointClassWith'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DisjointUnion2Fact{
+	from 
+		axiom:mowl!DisjointUnion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#disjointUnionClass',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#disjointUnionClass'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DisjointObjectProperty2Fact{
+	from 
+		axiom:mowl!DisjointObjectProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#disjointObjectPropertyWith',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#disjointObjectPropertyWith'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule EquivalentObjectProperty2Fact{
+	from 
+		axiom:mowl!EquivalentObjectProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#equivalentObjectProperty',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#equivalentObjectProperty'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule SubObjectPropertyOf2Fact{
+	from 
+		axiom:mowl!SubObjectPropertyOf
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#subObjectPropertyOf',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#subObjectPropertyOf'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule InverseObjectPropertyAxiom2Fact{
+	from 
+		axiom:mowl!InverseObjectPropertyAxiom
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#inverseObjectProperty',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#inverseObjectProperty'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule ObjectPropertyDomain2Fact{
+	from 
+		axiom:mowl!ObjectPropertyDomain
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#objectPropertyDomain',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#objectPropertyDomain'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule ObjectPropertyRange2Fact{
+	from 
+		axiom:mowl!ObjectPropertyRange
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#objectPropertyRange',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#objectPropertyRange'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DisjointDataProperty2Fact{
+	from 
+		axiom:mowl!DisjointDataProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#disjointDataPropertyWith',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#disjointDataPropertyWith'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule EquivalentDataProperty2Fact{
+	from 
+		axiom:mowl!EquivalentDataProperty
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#equivalentDataProperty',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#equivalentDataProperty'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule SubDataPropertyOf2Fact{
+	from 
+		axiom:mowl!SubDataPropertyOf
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#subDataPropertyOf',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#subDataPropertyOf'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DataPropertyDomain2Fact{
+	from 
+		axiom:mowl!DataPropertyDomain
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#dataPropertyDomain',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#dataPropertyDomain'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DataPropertyRange2Fact{
+	from 
+		axiom:mowl!DataPropertyRange
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#dataPropertyRange',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#dataPropertyRange'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule ClassAssertion2Fact{
+	from 
+		axiom:mowl!ClassAssertion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#classAssertion',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#classAssertion'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule SameIndividual2Fact{
+	from 
+		axiom:mowl!SameIndividual
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#sameIndividual',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#sameIndividual'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DifferentIndividual2Fact{
+	from 
+		axiom:mowl!DifferentIndividual
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#differentIndividual',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#differentIndividual'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule ObjectPropertyAssertionAxiom2Fact{
+	from 
+		axiom:mowl!ObjectPropertyAssertion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#objectPropertyAssertion',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#objectPropertyAssertion'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+
+rule NegativeObjectPropertyAssertionAxiom2Fact{
+	from 
+		axiom:mowl!NegativeObjectPropertyAssertion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2002/07/owl#negativeObjectPropertyAssertion',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#negativeObjectPropertyAssertion'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule DataPropertyAssertion2Fact{
+	from 
+		axiom:mowl!DataPropertyAssertion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#dataPropertyAssertion',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#dataPropertyAssertion'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule NegativeDataPropertyAssertion2Fact{
+	from 
+		axiom:mowl!NegativeDataPropertyAssertion
+	to
+		fact:jess!FactDefinition(
+			commentsBefore <- axiom.id,
+			commentsAfter <-  'IRI= ' + 'http://www.w3.org/2000/01/rdf-schema#negativeDataPropertyAssertion',
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- 'http://www.w3.org/2000/01/rdf-schema#negativeDataPropertyAssertion'
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'
+		)
+}
+
+rule Class2Fact{
+	from
+		class:mowl!Class
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- class.id,
+			commentsAfter <- 'IRI= ' + (class.ontology.multiontology.prefixIRI + '.mowl/'+ class.ontology.id + '.owl/' + class.id).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (class.ontology.multiontology.prefixIRI +'.mowl/'+class.ontology.id +'.owl#'+class.id).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#Class'
+		)
+}
+
+rule ObjectProperty2Fact{
+	from
+		objectProperty:mowl!ObjectProperty
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- objectProperty.id,
+			commentsAfter <- 'IRI= ' + (objectProperty.ontology.multiontology.prefixIRI + '.mowl/'+ objectProperty.ontology.id + '.owl/' + objectProperty.id).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (objectProperty.ontology.multiontology.prefixIRI +'.mowl/'+objectProperty.ontology.id +'.owl#'+objectProperty.id).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#ObjectProperty'
+		)
+}
+
+rule DataProperty2Fact{
+	from
+		dataProperty:mowl!DataProperty
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- dataProperty.id,
+			commentsAfter <- 'IRI= ' + (dataProperty.ontology.multiontology.prefixIRI + '.mowl/'+ dataProperty.ontology.id + '.owl/' + dataProperty.id).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (dataProperty.ontology.multiontology.prefixIRI +'.mowl/'+dataProperty.ontology.id +'.owl#'+dataProperty.id).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#DatatypeProperty'
+		)
+}
+
+rule NamedIndividual2Fact{
+	from
+		individual:mowl!NamedIndividual
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- individual.id,
+			commentsAfter <- 'IRI= ' + (individual.ontology.multiontology.prefixIRI + '.mowl/'+ individual.ontology.id + '.owl/' + individual.id).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (individual.ontology.multiontology.prefixIRI +'.mowl/'+individual.ontology.id +'.owl#'+individual.id).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#NamedIndividual'
+		)
+}
+
+rule AnonymousIndividual2Fact{
+	from
+		individual:mowl!AnonymousIndividual
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- individual.nodeID,
+			commentsAfter <- 'IRI= ' + (individual.ontology.multiontology.prefixIRI + '.mowl/'+ individual.ontology.id + '.owl/' + individual.nodeID).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (individual.ontology.multiontology.prefixIRI +'.mowl/'+individual.ontology.id +'.owl#'+individual.nodeID).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#AnonymousIndividual'
+		)
+}
+
+rule Literal2Fact{
+	from
+		literal:mowl!Constant
+	to
+		jess:jess!FactDefinition(
+			commentsBefore <- literal.lexicalValue,
+			commentsAfter <- 'IRI= ' + (literal.ontology.multiontology.prefixIRI + '.mowl/'+ literal.ontology.id + '.owl/' + literal.lexicalValue).regexReplaceAll(' ', '_'),
+			factName <- name,
+			fact <- triple
+		),
+		name:jess!ValidIdentifier(
+			val <- 'assert'
+		),
+		triple:jess!FactDefinition(
+			factName <- tripleName,
+			fact <- predicate,
+			fact <- subject,
+			fact <- object
+		),
+		tripleName:jess!ValidIdentifier(
+			val <- 'triple'
+		),
+		predicate:jess!FactDefinition(
+			factName <- predicateName,
+			fact <- predicateValue
+		),
+		predicateName:jess!ValidIdentifier(
+			val <- 'predicate'
+		),
+		predicateValue:jess!Str(
+			val <- 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+		),
+		subject:jess!FactDefinition(
+			factName <- subjectName,
+			fact <- subjectValue
+		),
+		subjectName:jess!ValidIdentifier(
+			val <- 'subject'
+		),
+		subjectValue:jess!Str(
+			val <- (literal.ontology.multiontology.prefixIRI +'.mowl/'+literal.ontology.id +'.owl#'+literal.lexicalValue).regexReplaceAll(' ', '_')
+		),
+		object:jess!FactDefinition(
+			factName <- objectName,
+			fact <- objectValue
+		),
+		objectName:jess!ValidIdentifier(
+			val <- 'object'
+		),
+		objectValue:jess!Str(
+			val <- 'http://www.w3.org/2002/07/owl#Literal'
+		)
+}

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mowl.metamodel/src" modelPluginID="mowl.metamodel"
+    modelName="mowl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mowl.ecore</foreignModel>
+  <genPackages prefix="mowl" disposableProviderFactory="true" ecorePackage="mowl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mowl.ecore#//AnnotationProperty">
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/backwardCompatibleWith"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/comment"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/deprecated"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/isCompatibleWith"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/isDefined"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/label"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/priorVersion"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/seeAlso"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//AnnotationProperty/versionInfo"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mowl.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/anyUri"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/based64Binary"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/byte"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/dateTime"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/dateTimeStamp"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/decimal"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/hexBinary"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/language"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/literal"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/long"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/name"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/nCName"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/negativeInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/nMTOKEN"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/nonNegativeInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/nonPositiveInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/normalizedString"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/plainLiteral"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/positiveInteger"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/rational"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/real"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/short"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/token"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/unsignedByte"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/unsignedInt"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/unsignedLong"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/unsignedShort"/>
+      <genEnumLiterals ecoreEnumLiteral="mowl.ecore#//DataType/xmlLiteral"/>
+    </genEnums>
+    <genClasses ecoreClass="mowl.ecore#//Multiontology">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Multiontology/prefixIRI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Multiontology/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Multiontology/ontologies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Multiontology/ontologyConnectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Multiontology/multiontologyAxioms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Multiontology/multiontologyAnnotations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//OntologyConnector"/>
+    <genClasses image="false" ecoreClass="mowl.ecore#//EConnector"/>
+    <genClasses ecoreClass="mowl.ecore#//LinkProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//LinkProperty/functionalLinkProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//LinkProperty/inverseFunctionalLinkProperty"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkProperty/sourceOntology"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkProperty/targetOntology"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkProperty/linkPropertyAxioms"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Axiom"/>
+    <genClasses image="false" ecoreClass="mowl.ecore#//MultiontologyAxiom"/>
+    <genClasses image="false" ecoreClass="mowl.ecore#//LinkPropertyAxiom">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//LinkPropertyAxiom/linkProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//EquivalentLinkProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//EquivalentLinkProperty/linkPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//SubLinkPropertyOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//SubLinkPropertyOf/linkPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DisjointLinkProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DisjointLinkProperty/linkPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DomainLinkProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DomainLinkProperty/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//RangeLinkPropertyOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//RangeLinkPropertyOf/expressions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//LinkPropertyExpression"/>
+    <genClasses ecoreClass="mowl.ecore#//LinkPropertyList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkPropertyList/linksProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkPropertyInverseOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkPropertyInverseOf/inverseLinkPropertyOf"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//Ontology">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Ontology/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/objectsProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/dataProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/individuals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/literals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/ontologyAxioms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/ontologyAnnotations"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//Ontology/multiontology"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Entity/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//Entity/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//Class">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//Class/classAxioms"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//Class/ontology"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectProperty/objectPropertyAxioms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/functionalObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/inverseFunctionalObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/transitiveObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/symmetricObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/asymmetricObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/reflexiveObjectProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectProperty/irreflexiveObjectProperty"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//ObjectProperty/ontology"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataProperty/dataPropertyAxioms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//DataProperty/functionalDataProperty"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//DataProperty/ontology"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Individual">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//Individual/individualAssertions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//Individual/ontology"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//NamedIndividual"/>
+    <genClasses ecoreClass="mowl.ecore#//AnonymousIndividual">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//AnonymousIndividual/nodeID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//OntologyAxiom"/>
+    <genClasses image="false" ecoreClass="mowl.ecore#//ClassAxiom">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//ClassAxiom/classAxiom"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DisjointClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DisjointClass/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DisjointUnion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DisjointUnion/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//EquivalentClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//EquivalentClass/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//SubClassOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//SubClassOf/expressions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//ObjectPropertyAxiom">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyAxiom/objectPropertyAxiom"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DisjointObjectProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DisjointObjectProperty/objectPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//EquivalentObjectProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//EquivalentObjectProperty/objectPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//SubObjectPropertyOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//SubObjectPropertyOf/objectPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//InverseObjectPropertyAxiom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//InverseObjectPropertyAxiom/objectProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectPropertyDomain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyDomain/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectPropertyRange">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyRange/expressions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//DataPropertyAxiom">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyAxiom/dataPropertyAxiom"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataPropertyDomain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyDomain/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataPropertyRange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyRange/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DisjointDataProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DisjointDataProperty/dataPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//EquivalentDataProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//EquivalentDataProperty/dataPropertyExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//SubDataPropertyOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//SubDataPropertyOf/dataPropertyExpressions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Assertion">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//Assertion/individualAssertion"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ClassAssertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//ClassAssertion/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//SameIndividual">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//SameIndividual/targetIndividual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DifferentIndividual">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DifferentIndividual/targetIndividual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectPropertyAssertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyAssertion/objectPropertyExpressions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyAssertion/targetIndividual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//NegativeObjectPropertyAssertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//NegativeObjectPropertyAssertion/objectPropertyExpressions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//NegativeObjectPropertyAssertion/targetIndividual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataPropertyAssertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyAssertion/dataPropertyExpressions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyAssertion/targetValue"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//NegativeDataPropertyAssertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mowl.ecore#//NegativeDataPropertyAssertion/dataPropertyExpressions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//NegativeDataPropertyAssertion/targetValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="mowl.ecore#//ClassExpression"/>
+    <genClasses ecoreClass="mowl.ecore#//ClassList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ClassList/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectIntersectionOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectIntersectionOf/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectUnionOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectUnionOf/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectComplementOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectComplementOf/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectOneOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectOneOf/individual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectSomeValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectSomeValuesFrom/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectSomeValuesFrom/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectAllValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectAllValuesFrom/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectAllValuesFrom/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectHasValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectHasValue/objectProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectHasValue/individual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectMinCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectMinCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectMinCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectMinCardinality/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectMaxCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectMaxCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectMaxCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectMaxCardinality/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ObjectExactCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ObjectExactCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectExactCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectExactCardinality/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataSomeValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataSomeValuesFrom/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataSomeValuesFrom/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataAllValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataAllValuesFrom/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataAllValuesFrom/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataHasValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataHasValue/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataHasValue/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataMinCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//DataMinCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataMinCardinality/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataMinCardinality/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataMaxCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//DataMaxCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataMaxCardinality/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataMaxCardinality/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//DataExactCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//DataExactCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataExactCardinality/dataProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataExactCardinality/literals"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//EConnectionExpression"/>
+    <genClasses ecoreClass="mowl.ecore#//LinkSomeValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkSomeValuesFrom/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkSomeValuesFrom/linkProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkAllValuesFrom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkAllValuesFrom/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkAllValuesFrom/linkProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkHasValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkHasValue/linkProperties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkHasValue/individual"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkMinCardinality">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkMinCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkMinCardinality/linkProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//LinkMinCardinality/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkMaxCardinality">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkMaxCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkMaxCardinality/linkProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//LinkMaxCardinality/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//LinkExactCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//LinkExactCardinality/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkExactCardinality/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//LinkExactCardinality/linkProperties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//ObjectPropertyExpression"/>
+    <genClasses ecoreClass="mowl.ecore#//ObjectPropertyList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//ObjectPropertyList/objectProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//InverseObjectProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//InverseObjectProperty/objectProperties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//DataPropertyExpression"/>
+    <genClasses ecoreClass="mowl.ecore#//DataPropertyList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//DataPropertyList/dataProperties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mowl.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Annotation/annotationProperty"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//Annotation/annotationTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//ConstantAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ConstantAnnotation/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//ConstantAnnotation/datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//AnnotationByEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mowl.ecore#//AnnotationByEntity/annotationValue"/>
+    </genClasses>
+    <genClasses ecoreClass="mowl.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Constant/lexicalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mowl.ecore#//Constant/datatype"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mowl.ecore#//Constant/ontology"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

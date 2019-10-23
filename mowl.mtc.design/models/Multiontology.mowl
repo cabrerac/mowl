@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mowl:Multiontology xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mowl="http:///mowl.ecore" id="Multiontology" prefixIRI="http://Multiontology" version="1.0">
+  <ontologies id="Ontology 1" version="1.0">
+    <classes id="Class 1"/>
+    <objectsProperty id="Object Property 1"/>
+    <dataProperty id="Data Property  1"/>
+    <dataProperty id="Data Property  2" annotations="//@ontologies.0/@ontologyAnnotations.0"/>
+    <literals lexicalValue="Literal 1"/>
+    <literals lexicalValue="Literal 2"/>
+    <ontologyAnnotations xsi:type="mowl:ConstantAnnotation" annotationTarget="//@ontologies.0/@dataProperty.1" value=""/>
+  </ontologies>
+  <ontologies id="Ontology 2" version="1.0">
+    <classes id="Class 1"/>
+    <objectsProperty id="Object Property 1"/>
+    <objectsProperty id="Object Property 2"/>
+    <dataProperty id="Data Property  1"/>
+    <individuals xsi:type="mowl:NamedIndividual" id="Individual  1"/>
+    <individuals xsi:type="mowl:NamedIndividual" id="Individual  2"/>
+    <individuals xsi:type="mowl:AnonymousIndividual" nodeID="Individual  3"/>
+    <literals lexicalValue="Literal 1"/>
+    <literals lexicalValue="Literal 2"/>
+  </ontologies>
+  <ontologies id="Ontology 3" version="1.0">
+    <classes id="Class 1"/>
+    <classes id="Class 2"/>
+    <classes id="Class 3"/>
+    <objectsProperty id="Object Property 1"/>
+    <objectsProperty id="Object Property 2"/>
+    <objectsProperty id="Object Property 3"/>
+    <dataProperty id="Data Property  1"/>
+    <dataProperty id="Data Property  2"/>
+    <individuals xsi:type="mowl:NamedIndividual" id="Individual  1"/>
+    <individuals xsi:type="mowl:AnonymousIndividual" nodeID="Individual  2"/>
+    <literals lexicalValue="Literal 1"/>
+  </ontologies>
+  <ontologyConnectors xsi:type="mowl:LinkProperty" id="Ontology Connector 2" sourceOntology="//@ontologies.2" targetOntology="//@ontologies.1"/>
+  <ontologyConnectors xsi:type="mowl:LinkProperty" id="Ontology Connector 3" sourceOntology="//@ontologies.1" targetOntology="//@ontologies.0"/>
+</mowl:Multiontology>

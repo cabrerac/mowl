@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jess:JessFile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jess="http:///jess.ecore" name="Multiontology">
+  <expressions xsi:type="jess:Root">
+    <commentsBefore>Multiontology</commentsBefore>
+    <commentsAfter>IRI= http://Multiontology.mowl</commentsAfter>
+    <commentsAfter> Version= 1.0</commentsAfter>
+    <expressions xsi:type="jess:FactDefinition">
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl#"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="#Multiontology"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Ontology Connector 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_Connector_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl#Ontology_Connector_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="#LinkProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Ontology Connector 3</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_Connector_3</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl#Ontology_Connector_3"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="#LinkProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+  </expressions>
+  <expressions xsi:type="jess:Root">
+    <commentsBefore>Ontology 1</commentsBefore>
+    <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl</commentsAfter>
+    <commentsAfter> Version= 1.0</commentsAfter>
+    <expressions xsi:type="jess:FactDefinition">
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Ontology"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Class 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Class_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Class_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Class"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Object_Property_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Object_Property_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Data Property  1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Data_Property__1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Data_Property__1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Data Property  2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Data_Property__2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Data_Property__2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Literal 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Literal_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Literal_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Literal"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Literal 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_1.owl/Literal_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_1.owl#Literal_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Literal"/>
+        </fact>
+      </fact>
+    </expressions>
+  </expressions>
+  <expressions xsi:type="jess:Root">
+    <commentsBefore>Ontology 2</commentsBefore>
+    <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl</commentsAfter>
+    <commentsAfter> Version= 1.0</commentsAfter>
+    <expressions xsi:type="jess:FactDefinition">
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Ontology"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Class 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Class_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Class_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Class"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Object_Property_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Object_Property_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Object_Property_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Object_Property_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Data Property  1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Data_Property__1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Data_Property__1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Individual  1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Individual__1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Individual__1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Individual  2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Individual__2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Individual__2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Individual  3</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Individual__3</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Individual__3"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#AnonymousIndividual"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Literal 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Literal_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Literal_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Literal"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Literal 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_2.owl/Literal_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_2.owl#Literal_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Literal"/>
+        </fact>
+      </fact>
+    </expressions>
+  </expressions>
+  <expressions xsi:type="jess:Root">
+    <commentsBefore>Ontology 3</commentsBefore>
+    <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl</commentsAfter>
+    <commentsAfter> Version= 1.0</commentsAfter>
+    <expressions xsi:type="jess:FactDefinition">
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Ontology"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Class 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Class_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Class_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Class"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Class 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Class_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Class_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Class"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Class 3</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Class_3</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Class_3"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Class"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Object_Property_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Object_Property_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Object_Property_2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Object_Property_2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Object Property 3</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Object_Property_3</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Object_Property_3"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Data Property  1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Data_Property__1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Data_Property__1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Data Property  2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Data_Property__2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Data_Property__2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Individual  1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Individual__1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Individual__1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Individual  2</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Individual__2</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Individual__2"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#AnonymousIndividual"/>
+        </fact>
+      </fact>
+    </expressions>
+    <expressions xsi:type="jess:FactDefinition">
+      <commentsBefore>Literal 1</commentsBefore>
+      <commentsAfter>IRI= http://Multiontology.mowl/Ontology_3.owl/Literal_1</commentsAfter>
+      <factName val="assert"/>
+      <fact xsi:type="jess:FactDefinition">
+        <factName val="triple"/>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="predicate"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="subject"/>
+          <fact xsi:type="jess:Str" val="http://Multiontology.mowl/Ontology_3.owl#Literal_1"/>
+        </fact>
+        <fact xsi:type="jess:FactDefinition">
+          <factName val="object"/>
+          <fact xsi:type="jess:Str" val="http://www.w3.org/2002/07/owl#Literal"/>
+        </fact>
+      </fact>
+    </expressions>
+  </expressions>
+</jess:JessFile>

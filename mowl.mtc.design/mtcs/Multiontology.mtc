@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1" M2TTechnology="ACCELEO,EGL" validateConformance="false">
+  <files name="jessFile" URI="workspace/Multiontology.clp" technology="" type="clp"/>
+  <metamodels name="mowlMetamodel" alias="mowl" metamodelURI="http:///mowl.ecore"/>
+  <metamodels name="jessMetamodel" alias="jess" metamodelURI="http:///jess.ecore"/>
+  <models name="mowlModel" URI="Multiontology.mowl" metamodels="//@metamodels.0"/>
+  <models name="jessModel" URI="Multiontology.jess" metamodels="//@metamodels.1"/>
+  <inputModels model="//@models.0" transformation="//@transformations.0"/>
+  <inputModels model="//@models.1" transformation="//@transformations.1"/>
+  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="mowl2jess" URI="mowl2jess.atl"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="jess2file" URI="jess2file.mtl" description="" technology="" implementationClass="" target="workspace/">
+    <properties name="templateNames" value="generateElement"/>
+  </transformations>
+  <outputModels model="//@models.1" transformation="//@transformations.0"/>
+  <outputFiles transformation="//@transformations.1" file="//@files.0"/>
+</com.mtcflow.model:MTC>
