@@ -2,7 +2,7 @@
 
 MOWL is a domain specific language for handling modular ontologies based on Model Driven Engineering (MDE). This language enables the manipulation of multiple ontologies, which can be connected through e-connections<sup>1</sup>. MOWL extends the Ontology Web Language (OWL<sup>2</sup>) with concepts to connect two or more ontologies allowing a modular development and management of knowledge models. Such models can be translated to knowledge bases implemented on Jess<sup>3</sup> to support knowledge-based applications.
 
-MOWL is developed using the Eclipse Modelling Framework (EMF). So as a first requirement you must download and install eclipse from the [EMF web site.](https://www.eclipse.org/modeling/emf/)
+MOWL is developed using the Eclipse Modelling Framework (EMF). So, you must download and install eclipse from the [EMF web site](https://www.eclipse.org/modeling/emf/) as a first requirement.
 
 Different artifacts compose MOWL as follows:
 
