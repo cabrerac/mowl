@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mowl -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mowl.presentation.mowlModelWizardID"
+            name="%_UI_mowlModelWizard_label"
+            class="mowl.presentation.mowlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/mowlModelFile.gif">
+         <description>%_UI_mowlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mowl -->
+      <editor
+            id="mowl.presentation.mowlEditorID"
+            name="%_UI_mowlEditor_label"
+            icon="icons/full/obj16/mowlModelFile.gif"
+            extensions="mowl"
+            class="mowl.presentation.mowlEditor"
+            contributorClass="mowl.presentation.mowlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
