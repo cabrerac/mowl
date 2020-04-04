@@ -27,7 +27,7 @@ Now you should see the MOWL Graphic Editor space where you can design multiontol
 
 For example, you can create an Ontology by clicking on the New Ontology option on the left tool bar and then clicking on the blank space.
 
-If you want to model inside the new Ontology, you should follow the following steps:
+If you want to model inside the new Ontology, you should follow the next steps:
 
 1. Right click on the Ontology element in the model -> New Representation.
 2. Click on New Ontology -> Set a name to the Representation -> Click on OK.
